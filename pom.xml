@@ -10,6 +10,11 @@
 
   <modules>
     <module>cloud-provider-payment8001</module>
+    <module>cloud-provider-payment8002</module>
+    <module>cloud-consumer-order80</module>
+    <module>cloud-api-commons</module>
+    <module>cloud-eureka-server7001</module>
+    <module>cloud-eureka-server7002</module>
   </modules>
 
   <packaging>pom</packaging>
@@ -41,7 +46,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>2020.0.1</version>
+        <version>2020.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -63,7 +68,7 @@
 
       <dependency>
         <groupId>com.alibaba</groupId>
-        <artifactId>druid</artifactId>
+        <artifactId>druid-spring-boot-starter</artifactId>
         <version>${druid.version}</version>
       </dependency>
 
@@ -92,7 +97,26 @@
         <optional>true</optional>
       </dependency>
 
+      <dependency>
+        <groupId>com.jk.cloud</groupId>
+        <artifactId>cloud-api-commons</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <finalName>cloud2023</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <addResources>true</addResources>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
